@@ -1,0 +1,14 @@
+--- automake-1.16	2024-09-20 14:49:35.149402601 +0900
++++ automake-1.16.modified	2024-09-20 14:50:16.543865410 +0900
+@@ -52,8 +52,9 @@ BEGIN
+     {
+       require threads;
+       import threads;
+-      require Thread::Queue;
+-      import Thread::Queue;
++# by aka
++##      require Thread::Queue;
++##      import Thread::Queue;
+     }
+ }
+ use Automake::General;
