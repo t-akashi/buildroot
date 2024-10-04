@@ -38,8 +38,11 @@ config BR2_PACKAGE_HOST_GO_HOST_ARCH_SUPPORTS
 
 # Go packages should select BR2_PACKAGE_HOST_GO
 config BR2_PACKAGE_HOST_GO
-	bool
+	bool "host go"
 	depends on BR2_PACKAGE_HOST_GO_HOST_ARCH_SUPPORTS
+        help
+          Compiler for the Go language
+          https://go.dev
 
 if BR2_PACKAGE_HOST_GO
 
@@ -56,6 +59,15 @@ config BR2_PACKAGE_HOST_GO_SRC
 	help
 	  This package will build the go compiler for the host.
 
+config BR2_PACKAGE_HOST_GO_BIN
+	bool "host go (pre-built)"
+	depends on BR2_HOSTARCH = "aarch64" \
+		|| BR2_HOSTARCH = "x86_64"  \
+		|| BR2_HOSTARCH = "x86"
+	help
+	  This package will install a pre-built version of go compiler
+	  from official package archive for the host.
+
 endchoice
 
 endif
@@ -63,7 +75,8 @@ endif
 config BR2_PACKAGE_PROVIDES_HOST_GO
 	string
 	# Default to host-go-src, as the only provider for now
-	default "host-go-src"
+	default "host-go-src" if BR2_PACKAGE_HOST_GO_SRC
+	default "host-go-bin" if BR2_PACKAGE_HOST_GO_BIN
 
 source "package/go/go-bootstrap-stage1/Config.in.host"
 source "package/go/go-bootstrap-stage2/Config.in.host"

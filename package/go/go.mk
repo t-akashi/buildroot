@@ -11,6 +11,9 @@ HOST_GO_HOST_CACHE = $(HOST_DIR)/share/host-go-cache
 HOST_GO_ROOT = $(HOST_DIR)/lib/go
 HOST_GO_TARGET_CACHE = $(HOST_DIR)/share/go-cache
 
+# FIXME
+# GOFLAGS might be -mod=mod if BR2_PACKAGE_HOST_GO_BIN
+
 # We pass an empty GOBIN, otherwise "go install: cannot install
 # cross-compiled binaries when GOBIN is set"
 HOST_GO_COMMON_ENV = \
@@ -111,13 +114,17 @@ HOST_GO_HOST_ENV = \
 	CGO_CXXFLAGS="$(HOST_CXXFLAGS)" \
 	CGO_LDFLAGS="$(HOST_LDFLAGS)"
 
+define GO_BINARIES_INSTALL_COMMON
+	mkdir -p $(HOST_DIR)/bin
+	ln -sf ../lib/go/bin/go $(HOST_DIR)/bin/
+	ln -sf ../lib/go/bin/gofmt $(HOST_DIR)/bin/
+endef
+
 define GO_BINARIES_INSTALL
 	$(INSTALL) -D -m 0755 $(@D)/bin/go $(HOST_GO_ROOT)/bin/go
 	$(INSTALL) -D -m 0755 $(@D)/bin/gofmt $(HOST_GO_ROOT)/bin/gofmt
 
-	mkdir -p $(HOST_DIR)/bin
-	ln -sf ../lib/go/bin/go $(HOST_DIR)/bin/
-	ln -sf ../lib/go/bin/gofmt $(HOST_DIR)/bin/
+	$(GO_BINARIES_INSTALL_COMMON)
 
 	cp -a $(@D)/lib $(HOST_GO_ROOT)/
 

@@ -1,0 +1,39 @@
+# This file is manually created from
+#     https://go.dev/dl/
+
+#
+sha256 3ea4c78e6fa52978ae1ed2e5927ad17495da440c9fae7787b1ebc1d0572f7f43 go1.22.5.linux-386.tar.gz
+
+#
+sha256 904b924d435eaea086515bc63235b192ea441bd8c9b198c507e85009e6e4c7f0 go1.22.5.linux-amd64.tar.gz
+
+#
+sha256 8d21325bfcf431be3660527c1a39d3d9ad71535fabdf5041c826e44e31642b5a go1.22.5.linux-arm64.tar.gz
+
+#
+sha256 8c4587cf3e63c9aefbcafa92818c4d9d51683af93ea687bf6c7508d6fa36f85e go1.22.5.linux-armv6l.tar.gz
+
+#
+sha256 f784aa1adfb605da3bfe8cd534b545bddae3eb893e9302f7c2f5d44656b1cae2 go1.22.5.linux-mips.tar.gz
+
+#
+sha256 aaa3756571467768388f2ab641a02ff54f98f1684808cda047a7be3026e4b438 go1.22.5.linux-mips64.tar.gz
+
+#
+sha256 b7956d925c9ef5a4dc53017feaed2d78dba5d0a1036bad5ea513f1f15ba08fbc go1.22.5.linux-mips64le.tar.gz
+
+#
+sha256 7baf605be9b787acd750b6b48a91818a5590ec9289b14aea5696a46b41853888 go1.22.5.linux-mipsle.tar.gz
+
+#
+sha256 f09b2a6c1a409662e8e8fe267e1eabeba0a1fd00eb1422fd88297b013803952e go1.22.5.linux-ppc64.tar.gz
+
+#
+sha256 5312bb420ac0b59175a58927e70b4660b14ab7319aab54398b6071fabcbfbb09 go1.22.5.linux-ppc64le.tar.gz
+
+#
+sha256 f8d0c7d96b336f4133409ff9da7241cfe91e65723c2e8e7c7f9b58a9f9603476 go1.22.5.linux-risc64.tar.gz
+
+#
+sha256 24c6c5c9d515adea5d58ae78388348c97614a0c21ac4d4f4c0dab75e893b0b5d go1.22.5.linux-s390x.tar.gz
+
